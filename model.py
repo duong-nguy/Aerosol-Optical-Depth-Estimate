@@ -1,22 +1,8 @@
-import os
-import time
-import random
-import pandas as pd
-import numpy as np
-from PIL import Image
-
 import torch
 from torch import nn
 import torch.nn.functional as F
-from torch.utils.data import DataLoader, Dataset, random_split
-
-import timm
-from timm.data import resolve_data_config
-from timm.data.transforms_factory import create_transform
 
 import lightning as L
-from lightning.pytorch.callbacks import ModelCheckpoint
-from lightning.pytorch.tuner import Tuner
 
 
 
@@ -85,7 +71,7 @@ class AODregressor(nn.Module):
         return x
 
 class LitAODregressor(L.LightningModule):
-    def __init__(self,inputs,learning_rate=0.001):
+    def __init__(self,inputs,learning_rate=0.01):
         super().__init__()
         self.learning_rate = learning_rate
         self.model = AODregressor(inputs)
@@ -116,5 +102,3 @@ class LitAODregressor(L.LightningModule):
         optimizer = torch.optim.AdamW(self.parameters(),lr=self.learning_rate)
         return {"optimizer": optimizer}
 
-if __name__ == '__main__':
-    model = LitAODregressor((4,118,118))

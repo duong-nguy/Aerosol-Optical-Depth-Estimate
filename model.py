@@ -83,7 +83,7 @@ class LitAODregressor(L.LightningModule):
         metric_fct = PearsonCorrCoef()
         loss = loss_fct(aod_pred,aod)
         metric = metric_fct(aod_pred.cpu(),aod.cpu())
-        self.log("MAELoss", loss)
+        self.log("Val_MAELoss", loss)
         self.log("Pearson_R", metric)
         return loss
 

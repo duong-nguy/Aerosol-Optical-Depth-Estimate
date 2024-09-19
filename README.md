@@ -36,4 +36,4 @@ The preprocessed dataset is provided by the competition hosts. Ensure that the d
 python main.py --data_dir data --batch_size 128 --num_workers 3 --max_epochs 300 --sainity_check False
 ```
 ## References
-- Paper Citation: Jiang, J., Liu, J., & Jiao, D. (2023). Aerosol Optical Depth Retrieval for Sentinel-2 Based on Convolutional Neural Network Method, Atmosphere, 14(9), 1400. [Link to paper](https://www.mdpi.com/2073-4433/14/9/1400)
+- Jiang, J., Liu, J., & Jiao, D. (2023). Aerosol Optical Depth Retrieval for Sentinel-2 Based on Convolutional Neural Network Method, Atmosphere, 14(9), 1400. [Link to paper](https://www.mdpi.com/2073-4433/14/9/1400)
